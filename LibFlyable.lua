@@ -96,6 +96,16 @@ local noFlySubzones = {
 	["Nespirah"] = true, ["Неспира"] = true, ["네스피라"] = true, ["奈瑟匹拉"] = true, ["奈斯畢拉"] = true,
 }
 
+-- Since 9.0.1 IsFlyableArea() returns false for some flyable zones
+local flyableContinents = {
+	[1116] = 1, -- Draenor
+	[   0] = 1, -- Eastern Kingdoms (Flight Master's License)
+	[   1] = 1, -- Kalimdor (Flight Master's License)
+	[ 646] = 1, -- Deepholm (Flight Master's License)
+	[ 571] = 1, -- Northrend (Cold Weather Flying)
+	[ 870] = 1, -- Pandaria (Wisdom of the Four Winds)
+}
+
 ----------------------------------------
 -- Logic
 ----------------------------------------
@@ -106,12 +116,13 @@ local IsFlyableArea = IsFlyableArea
 local IsSpellKnown = IsSpellKnown
 
 function lib.IsFlyableArea()
-	if not IsFlyableArea()
-	or noFlySubzones[GetSubZoneText() or ""] then
+	local _, _, _, _, _, _, _, instanceMapID = GetInstanceInfo()
+	local flyable = flyableContinents[instanceMapID]
+
+	if not flyable and (not IsFlyableArea() or noFlySubzones[GetSubZoneText() or ""]) then
 		return false
 	end
 
-	local _, _, _, _, _, _, _, instanceMapID = GetInstanceInfo()
 	local reqSpell = spellForContinent[instanceMapID]
 	if reqSpell then
 		return reqSpell > 0 and IsSpellKnown(reqSpell)
