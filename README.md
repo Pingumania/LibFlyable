@@ -18,12 +18,7 @@ isFlyable = lib:IsFlyableArea() -- true/false
 ```
 
 **Source code and bug reports on GitHub:**  
-<https://github.com/phanx-wow/LibFlyable>
-
-**URL to use with the CurseForge packager:**  
-`https://repos.curseforge.com/wow/libflyable`  
-Only tagged releases are pushed to CurseForge, so using this URL will ensure
-the packager always gives you a tested and stable version of the library.
+<https://github.com/pngmn/LibFlyable>
 
 
 ## Contributing
