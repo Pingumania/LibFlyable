@@ -68,6 +68,7 @@ local spellForContinent = {
 	[2124] = -1, -- Crestfall
 
 	-- Unflyable Dungeons where IsFlyableArea returns true:
+	[1208] = -1, -- Grimrail Depot
 	[1763] = -1, -- Atal'dazar
 
 	-- Unflyable Warfronts where IsFlyableArea returns true:
@@ -76,6 +77,7 @@ local spellForContinent = {
 	
 	-- Unflyable Raids where IsFlyableArea returns true:
 	[2169] = -1, -- Uldir: The Oblivion Door
+	[2296] = -1, -- Castle Nathria
 	
 	-- Unflyable Scenarios where IsFlyableArea returns true:
 	[1662] = -1, -- Assault of the Sanctum of Order
@@ -84,6 +86,9 @@ local spellForContinent = {
 
 	-- Unflyable Lesser Visions where IsFlyableArea returns true:
 	[2275] = -1, -- Vale of Eternal Twilight
+
+	-- Unflyable Covenant areas where IsFlyableArea returns true:
+	[2363] = -1, -- Ardenweald Queens Conservatory
 }
 
 local noFlySubzones = {
