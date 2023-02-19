@@ -20,17 +20,6 @@ if not lib then return end
 
 local spellForContinent = {
 	-- Continents/instances requiring a spell to fly:
-	-- Draenor Pathfinder
-	[1116] = 191645, -- Draenor
-	[1464] = 191645, -- Tanaan Jungle
-	[1152] = 191645, -- FW Horde Garrison Level 1
-	[1330] = 191645, -- FW Horde Garrison Level 2
-	[1153] = 191645, -- FW Horde Garrison Level 3
-	[1154] = 191645, -- FW Horde Garrison Level 4
-	[1158] = 191645, -- SMV Alliance Garrison Level 1
-	[1331] = 191645, -- SMV Alliance Garrison Level 2
-	[1159] = 191645, -- SMV Alliance Garrison Level 3
-	[1160] = 191645, -- SMV Alliance Garrison Level 4
 	-- Broken Isles Pathfinder
 	[1220] = 233368, -- Broken Isles
 	-- Battle for Azeroth Pathfinder
@@ -74,11 +63,11 @@ local spellForContinent = {
 	-- Unflyable Warfronts where IsFlyableArea returns true:
 	[1943] = -1, -- The Battle of Stormgarde
 	[1876] = -1, -- Warfronts Arathi - Horde
-	
+
 	-- Unflyable Raids where IsFlyableArea returns true:
 	[2169] = -1, -- Uldir: The Oblivion Door
 	[2296] = -1, -- Castle Nathria
-	
+
 	-- Unflyable Scenarios where IsFlyableArea returns true:
 	[1662] = -1, -- Assault of the Sanctum of Order
 	[1906] = -1, -- Zandalar Continent Finale
