@@ -95,12 +95,11 @@ local IsFlyableArea = IsFlyableArea
 local IsSpellKnown = IsSpellKnown
 
 function lib.IsFlyableArea()
-	local _, _, _, _, _, _, _, instanceMapID = GetInstanceInfo()
-
 	if not IsFlyableArea() or noFlySubzones[GetSubZoneText() or ""] then
 		return false
 	end
 
+	local _, _, _, _, _, _, _, instanceMapID = GetInstanceInfo()
 	local reqSpell = spellForContinent[instanceMapID]
 	if reqSpell then
 		return reqSpell > 0 and IsSpellKnown(reqSpell)
