@@ -60,6 +60,8 @@ local spellForContinent = {
 	[1208] = -1, -- Grimrail Depot
 	[1763] = -1, -- Atal'dazar
 
+	-- Flyable Dungeons where IsFlyableArea returns false:
+
 	-- Unflyable Warfronts where IsFlyableArea returns true:
 	[1943] = -1, -- The Battle of Stormgarde
 	[1876] = -1, -- Warfronts Arathi - Horde
@@ -67,6 +69,8 @@ local spellForContinent = {
 	-- Unflyable Raids where IsFlyableArea returns true:
 	[2169] = -1, -- Uldir: The Oblivion Door
 	[2296] = -1, -- Castle Nathria
+
+	-- Flyable Raids where IsFlyableArea returns false:
 
 	-- Unflyable Scenarios where IsFlyableArea returns true:
 	[1662] = -1, -- Assault of the Sanctum of Order
@@ -105,5 +109,5 @@ function lib.IsFlyableArea()
 		return reqSpell > 0 and IsSpellKnown(reqSpell)
 	end
 
-	return IsSpellKnown(34090) or IsSpellKnown(34091) or IsSpellKnown(90265)
+	return true
 end
